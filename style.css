@@ -5,13 +5,23 @@
 }
 
 #top{
-    background-color: red;
+    background-color: white;
 }
 
 .user-icon{
     height: 50px;
+    border-radius: 50%;
 }
 
 #notifiche{
     background-color: #8DDBFC;
+}
+
+.fa-bell-slash {
+    color: white;
+    
+}
+
+#contatti{
+    height: 300px;
 }
