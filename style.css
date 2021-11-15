@@ -1,0 +1,17 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#top{
+    background-color: red;
+}
+
+.user-icon{
+    height: 50px;
+}
+
+#notifiche{
+    background-color: #8DDBFC;
+}
