@@ -21,13 +21,20 @@
                     <div class="container px-0" id="top">
                         <div class="row mt-2">
                             <div class="col-12 d-flex align-items-center grey ">
-                                <img class='user-icon' src="img/avatar_io.jpg" alt="IconaUtente">
-                                <span class="px-3">NomeUtente</span>
-                                <div class="text-muted px-3 justify-content-end"> 
-                                    <i class="fas fa-circle-notch fa-lg user-action px-2"></i>
-                                    <i class="fas fa-comment-alt fa-lg user-action px-2"></i>
-                                    <i class="fas fa-ellipsis-v fa-lg user-action px-2"></i>
+                                <div class="col-6 d-flex">
+                                    <img class='user-icon' src="img/avatar_io.jpg" alt="IconaUtente">
+                                    <span class="d-flex align-items-center px-3">NomeUtente</span>
+                                   
+
                                 </div>
+                                <div class="col-6 d-flex justify-content-end">
+                                    <div class="text-muted px-3"> 
+                                        <i class="fas fa-circle-notch fa-lg user-action px-2"></i>
+                                        <i class="fas fa-comment-alt fa-lg user-action px-2"></i>
+                                        <i class="fas fa-ellipsis-v fa-lg user-action px-2"></i>
+                                    </div>
+                                </div>
+                                
                             </div>
                         </div>
             
@@ -60,14 +67,15 @@
                             <div class="col-12">
             
                                 <div class="col-12 d-flex mt-3" v-for="user in users">
-                                    <div class="d-flex align-items-center justify-content-center">
+                                    <div class="col-6 d-flex ">
                                         <img class='user-icon' :src="user.userImg" alt="">
+                                        <ul class="list-unstyled mb-1 px-3">
+                                            <li><b>{{user.userName}}</b></li>
+                                            <li class="preview">{{user.messages[0].text}}</li>
+                                        </ul>
                                     </div>
-                                    <ul class="list-unstyled mb-1 px-3">
-                                        <li><b>{{user.userName}}</b></li>
-                                        <li class="preview">{{user.text}} ciao </li>
-                                    </ul>
-                                    <div class="d-flex justify-content-end preview" > 11/10/20 16:15:22</div>
+                                    
+                                    <div class=" col-6 d-flex justify-content-end preview" > {{user.messages[0].date}}</div>
                                 </div>
                             </div>
                         </div>
@@ -80,17 +88,21 @@
                     
                     <div class="row mt-2 " >
                         <div class="col-12 d-flex align-items-center grey">
-                            <div class="d-flex align-items-center justify-content-center">
-                                <img class='user-icon' src="img/avatar_io.jpg" alt="IconaUtente">
+                            <div class="col-6 d-flex">
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <img class='user-icon' src="img/avatar_io.jpg" alt="IconaUtente">
+                                </div>
+                                <ul class="list-unstyled mb-1 px-3">
+                                    <li><b>{{users[0].userName}}</b></li>
+                                    <li>ultimo accesso: {{users[0].date}}</li>
+                                </ul>
                             </div>
-                            <ul class="list-unstyled mb-1 px-3">
-                                <li><b>NOME</b></li>
-                                <li>ultimo accesso:</li>
-                            </ul>
-                            <div class="text-muted px-3 justify-content-end"> 
-                                <i class="fas fa-search fa-lg "></i>
-                                <i class="fas fa-paperclip fa-lg px-2"></i>
-                                <i class="fas fa-ellipsis-v fa-lg px-2"></i>
+                            <div class="col-6 d-flex justify-content-end">
+                                <div class="text-muted px-3 justify-content-end"> 
+                                    <i class="fas fa-search fa-lg "></i>
+                                    <i class="fas fa-paperclip fa-lg px-2"></i>
+                                    <i class="fas fa-ellipsis-v fa-lg px-2"></i>
+                                </div>
                             </div>
                         </div>
                     </div>
