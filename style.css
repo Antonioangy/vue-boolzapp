@@ -3,7 +3,10 @@
     margin: 0;
     box-sizing: border-box;
 }
-
+#green{
+    background-color: #179588;
+    height: 100px;
+}
 #top{
     background-color: white;
 }
@@ -29,4 +32,29 @@
 #chat{
     height: 70vh;
     background-image: url(https://preview.redd.it/qwd83nc4xxf41.jpg?auto=webp&s=172adf428061ec1b71c0d43b7ba870f85d46a816);
+}
+
+.grey{
+    background-color: #F3EEEA;
+}
+/* messaggi */
+.messages-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.message {
+    width: max-content;
+    max-width: 50%;
+    padding: 5px;
+    border-radius: 10px;
+    margin-top: 10px;
+    word-wrap: break-word;
+}
+.my-message {
+    background-color: #DCF8C6;
+}
+
+.sender-message {
+    background-color: #FFFFFF;
 }
