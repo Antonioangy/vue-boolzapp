@@ -93,10 +93,6 @@ var boolzapp = new Vue({
         cambiaChat(i) {
             this.utenteAttivo = i;
         }
-
-
-
-
     }
-   
+    
 });
