@@ -88,4 +88,5 @@ var boolzapp = new Vue({
                 },   
             ]   
     }
+    
 });
