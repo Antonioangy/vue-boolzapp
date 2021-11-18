@@ -1,6 +1,7 @@
 var boolzapp = new Vue({
     el: '.container',
     data: {
+        utenteAttivo: 0,
         users:   [   
             {   
             userImg:   'img/avatar_1.jpg',   
