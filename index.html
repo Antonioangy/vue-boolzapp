@@ -64,7 +64,7 @@
                         <!-- contatti  -->
             
                         <div class="row mt-3 ">
-                            <div class="col-12">
+                            <div class="col-12 ">
             
                                 <div class="col-12 d-flex mt-3" v-for="user,i in users" @click="cambiaChat(i)">
                                     <div class="col-6 d-flex ">
@@ -90,11 +90,11 @@
                         <div class="col-12 d-flex align-items-center grey">
                             <div class="col-6 d-flex">
                                 <div class="d-flex align-items-center justify-content-center">
-                                    <img class='user-icon' src="img/avatar_io.jpg" alt="IconaUtente">
+                                    <img class='user-icon' :src="users[utenteAttivo].userImg" alt="IconaUtente">
                                 </div>
                                 <ul class="list-unstyled mb-1 px-3">
-                                    <li><b>{{users[0].userName}}</b></li>
-                                    <li>ultimo accesso: {{users[0].date}}</li>
+                                    <li><b>{{users[utenteAttivo].userName}}</b></li>
+                                    <li>ultimo accesso {{users[utenteAttivo].date}}</li>
                                 </ul>
                             </div>
                             <div class="col-6 d-flex justify-content-end">
@@ -109,15 +109,27 @@
 
                     <!-- chat -->
                     <div id="chat">
-                        <div class="messages-container overflow-hidden h p-0">
+                        <div class="messages-container">
                             <div class="col-12 chat">
                                 <ul class="d-flex flex-column ">
-                                    <li  class="d-flex justify-content-end ">
-                                        <div class="message ">
-                                            <div class="my-message" v-for="message in users[utenteAttivo].messages">
-                                                aasd
+                                    <li  class="d-flex" v-for="message in users[utenteAttivo].messages">
+                                        <div class="d-flex flex-row-reverse" style = "width: 100%;" v-if="message.status == 'sent'">
+                                            <div class="message mr-2" :class="message.status">
+                                            
+                                                <h6>{{message.text}}</h6>
+                                                
+                                                <p class="data m-3 mt-3">{{message.date}}</p>
+                                                
                                             </div>
-                                            <p class="date-time m-0"></p>
+                                        </div>
+                                        <div class="d-flex" style = "width: 100%;" v-else>
+                                            <div class="message " :class="message.status">
+                                            
+                                                <h6>{{message.text}}</h6>
+                                                
+                                                <p class="data m-3 mt-3">{{message.date}}</p>
+                                                
+                                            </div>
                                         </div>
                                     </li>
                                 </ul>
@@ -128,7 +140,7 @@
                     <div class="mt-auto grey">
                         <div class="search-chat col-12 d-flex align-items-center p-2 ">
                             <i class=" far fa-smile fa-lg m-3 "></i>
-                            <input class="form-control " type="text " placeholder="Cerca o Inizia una nuova Chat " aria-label="Search " v-on:keyup.enter="sendMessage() " v-model="currentInputMessage ">
+                            <input class="form-control " type="text " placeholder="Cerca o Inizia una nuova Chat" @keydown.enter="sendMessage()">
                             <i class="fas fa-microphone fa-lg m-3 "></i>
                             <i class="fa fa-paper-plane fa-lg m-3 "></i>
                         </div>
